@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import paw from "../../images/paw.svg"
+import training from "../../images/training.png"
+import boarding from "../../images/boarding.png"
+import grooming from "../../images/grooming.png"
 import serviceBlob from "../../images/service-blob.png"
 
 const ServicesContainer = styled.div`
@@ -8,120 +10,100 @@ const ServicesContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 20px 0;
+  align-items: center;
+  padding: 90px 0;
+  background: rgb(10, 255, 93, 0.12);
+  margin-top: 50px;
 `
 
 const SectionTitle = styled.span`
   font-family: Roboto, Helvetica, sans-serif;
   font-weight: 600;
-  color: #53924f;
+  color: #23395d;
   text-align: center;
-  margin-bottom: 150px;
+  margin-bottom: 25px;
   font-size: 2em;
+  margin-top: 20px;
 `
 
-const ServiceBox = styled.div`
-  position: relative;
-  width: 300px;
-  height: 400px;
-  background: #ffffff;
+const Services = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 15%;
+`
+
+const Service = styled.div`
   display: flex;
   flex-direction: column;
+  font-size: 30px;
   align-items: center;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-  .greenPaw {
-    width: 50%;
-    position: absolute;
-    top: -100px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: -1;
-    opacity: 0.9;
-  }
-`
-
-const ServiceTitle = styled.span`
+  color: #23395d;
   font-family: Roboto, Helvetica, sans-serif;
   font-weight: 600;
-  font-size: 1em;
-  margin-bottom: 30px;
-`
-
-const ServiceBody = styled.span`
-  font-family: Roboto, Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 1em;
-  margin-bottom: 30px;
-`
-
-const BoxesContainer = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  padding: 0 100px;
-  .serviceBlob {
-    position: absolute;
-    top: -30px;
-    left: 0;
-    z-index: -1;
-    width: 100%;
+  transition: 200ms all ease-out;
+  &:hover {
+    transform: translateY(-20px);
+    .imgWrap:after {
+      transition: 300ms all ease-out;
+      background: #23395d;
+      content: "Book Today";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+    }
   }
 `
 
-const ScheduleButton = styled.button`
-  height: 40px;
+const Underline = styled.div`
+  width: 400px;
+  height: 2px;
+  background: #808080;
+  opacity: 0.15;
+  margin-bottom: 100px;
+  border-radius: 10px;
+`
+
+const ImageWrapper = styled.div`
   width: 200px;
-  color: #ffffff;
-  background: #000000;
-  font-family: Roboto, Helvetica, sans-serif;
-  font-weight: 600;
-  font-size: 1em;
-  border-radius: 5px;
+  height: 200px;
+  border: 5px solid #23395d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10000px;
 `
 
 const ServicesSection = () => {
   return (
     <ServicesContainer>
-      <SectionTitle>Our Services</SectionTitle>
-      <BoxesContainer>
-        <img className="serviceBlob" src={serviceBlob} />
-        <ServiceBox>
-          <img className="greenPaw" src={paw} />
-          <ServiceTitle>Training</ServiceTitle>
-          <ServiceBody>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </ServiceBody>
-          <ScheduleButton>Schedule</ScheduleButton>
-        </ServiceBox>
-        <ServiceBox>
-          <img className="greenPaw" src={paw} />
-          <ServiceTitle>Day Care</ServiceTitle>
-          <ServiceBody>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </ServiceBody>
-          <ScheduleButton>Schedule</ScheduleButton>
-        </ServiceBox>
-        <ServiceBox>
-          <img className="greenPaw" src={paw} />
-          <ServiceTitle>Walking</ServiceTitle>
-          <ServiceBody>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </ServiceBody>
-          <ScheduleButton>Schedule</ScheduleButton>
-        </ServiceBox>
-      </BoxesContainer>
+      <SectionTitle>Services</SectionTitle>
+      <Underline></Underline>
+      <Services>
+        <Service>
+          <p>Training</p>
+          <ImageWrapper className="imgWrap">
+            <img src={training} height="118px" alt="training" />
+          </ImageWrapper>
+        </Service>
+        <Service>
+          <p>Boarding</p>
+          <ImageWrapper className="imgWrap">
+            <img src={boarding} height="100px" alt="boarding" />
+          </ImageWrapper>
+        </Service>
+        <Service>
+          <p>Day Care</p>
+          <ImageWrapper className="imgWrap">
+            <img src={grooming} height="100px" alt="day care" />
+          </ImageWrapper>
+        </Service>
+      </Services>
     </ServicesContainer>
   )
 }

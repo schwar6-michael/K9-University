@@ -1,29 +1,34 @@
 import React from "react"
 import styled from "styled-components"
 import mainLogo from "../../images/main-logo.svg"
-import walkingDog from "../../images/walking-dog.svg"
-import walkingDog2 from "../../images/walking-dog-2.png"
-import leftSideBlob from "../../images/left-blob-main-section.svg"
+import pup1 from "../../images/pup1.png"
+import leash from "../../images/leash.png"
+import background from "../../images/background.png"
 
-const WelcomeContainer = styled.div`
+const TopContainer = styled.div`
   position: relative;
   height: 100vh;
   width: 100%;
-  padding-left: 5%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   overflow: hidden;
-  .leftSideBlob {
+  .pup1 {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    height: 550px;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+  .background {
     position: absolute;
     top: 0;
-    left: -25px;
-    z-index: -1;
+    left: 0;
+    z-index: -2;
+    opacity: 0.65;
+    min-width: 1300px;
     height: 100vh;
-  }
-  @media (max-width: 667px) {
-    display: flex;
-    flex-direction: column;
   }
 `
 
@@ -33,10 +38,10 @@ const NavBar = styled.div`
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   font-family: Roboto, Helvetica, sans-serif;
+  color: #23395d;
   font-weight: 600;
-  padding: 0 3%;
   ul {
     display: flex;
     justify-content: space-between;
@@ -45,12 +50,12 @@ const NavBar = styled.div`
     padding-top: 20px;
   }
   ul li {
-    margin-left: 25px;
+    margin-right: 25px;
     border-radius: 2px;
     padding: 0 5px;
   }
   ul li:hover {
-    border-bottom: 4px solid #53924f;
+    border-bottom: 4px solid #23395d;
     transition: 200ms all ease-out;
   }
 `
@@ -58,9 +63,12 @@ const NavBar = styled.div`
 const LogoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
-  padding-right: 15%;
+  padding: 0;
   animation: fadeInDown 1.5s ease-out;
+  width: 400px;
+  .logo {
+    margin-bottom: 0;
+  }
   img {
     width: 100%;
   }
@@ -78,9 +86,15 @@ const LogoContainer = styled.div`
 
 const BodyContent = styled.span`
   font-family: Roboto, Helvetica, sans-serif;
-  font-size: 1.3em;
-  font-weight: 600;
-  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 40px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  span {
+    color: #23395d;
+    font-weight: 600;
+  }
 `
 
 const MainButton = styled.button`
@@ -95,32 +109,15 @@ const MainButton = styled.button`
   transition: 200ms all ease-out;
   &:hover {
     transform: scale(1.01);
-    background: hsl(116, 30%, 34%);
-    border: 1px solid hsl(116, 30%, 34%);
+    background: hsl(217, 45%, 38%);
+    border: 1px solid hsl(217, 45%, 38%);
   }
 `
 
-const WalkingImageContainer = styled.div`
-  width: 50%;
-  animation: fadeInRight 1.5s ease-out;
-  img {
-    width: 100%;
-  }
-  @keyframes fadeInRight {
-    0% {
-      opacity: 0;
-      transform: translateX(150px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-`
-
-const WelcomeSection = () => {
+const TopSection = () => {
   return (
-    <WelcomeContainer>
+    <TopContainer>
+      <img className="background" src={background} alt="background" />
       <NavBar>
         <ul>
           <li>About</li>
@@ -129,17 +126,17 @@ const WelcomeSection = () => {
           <li>Contact Us</li>
         </ul>
       </NavBar>
-      <img className="leftSideBlob" src={leftSideBlob} />
+      <img className="pup1" src={pup1} alt="puppy" />
       <LogoContainer>
-        <img src={mainLogo} />
-        <BodyContent>New York-based dog training by experts</BodyContent>
+        <img className="logo" src={mainLogo} />
+        <BodyContent>
+          New York-based dog training, turning good boys into{" "}
+          <span>great ones.</span>
+        </BodyContent>
         <MainButton>Schdule Training</MainButton>
       </LogoContainer>
-      <WalkingImageContainer>
-        <img src={walkingDog2} />
-      </WalkingImageContainer>
-    </WelcomeContainer>
+    </TopContainer>
   )
 }
 
-export default WelcomeSection
+export default TopSection
