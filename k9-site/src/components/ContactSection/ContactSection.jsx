@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import cuteDog from "../../images/cute-dog-flip.png"
 import backgroundInverse from "../../images/background-inverse.png"
@@ -52,13 +52,6 @@ const TextArea = styled.textarea`
   border-radius: 3px;
   font-size: 16px;
 `
-
-const FormTitle = styled.span`
-  font-family: Roboto, Helvetica, sans-serif;
-  font-weight: 600;
-  font-size: 1.5em;
-`
-
 const Form = styled.form`
   width: 450px;
 `
@@ -101,15 +94,6 @@ const BottomNav = styled.div`
 `
 
 const ContactSection = () => {
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
-
-  const handleChange = (event, setState) => {
-    setState(event.target.value)
-  }
-
   return (
     <ContactContainer>
       <SectionTitle>Still Not Sure? Let's Chat...</SectionTitle>
@@ -121,29 +105,11 @@ const ContactSection = () => {
       />
       <Form>
         <HorizontalContainer>
-          <Input
-            placeholder="First Name"
-            name="setFirstName"
-            width="48%"
-            onChange={e => handleChange(e, setFirstName)}
-          />
-          <Input
-            placeholder="Last Name"
-            width="48%"
-            name="setLastName"
-            onChange={e => handleChange(e, setLastName)}
-          />
+          <Input placeholder="First Name" name="setFirstName" width="48%" />
+          <Input placeholder="Last Name" width="48%" name="setLastName" />
         </HorizontalContainer>
-        <Input
-          placeholder="Email"
-          name="setEmail"
-          onChange={e => handleChange(e, setEmail)}
-        />
-        <TextArea
-          placeholder="Message"
-          name="setMessage"
-          onChange={e => handleChange(e, setMessage)}
-        />
+        <Input placeholder="Email" name="setEmail" />
+        <TextArea placeholder="Message" name="setMessage" />
         <SubmitButton>Submit</SubmitButton>
       </Form>
       <BottomNav></BottomNav>

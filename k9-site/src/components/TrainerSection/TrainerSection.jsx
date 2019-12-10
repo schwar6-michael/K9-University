@@ -9,6 +9,9 @@ const TrainerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 667px) {
+    padding: 0 30px;
+  }
 `
 
 const Image = styled.div`
@@ -17,26 +20,38 @@ const Image = styled.div`
   border-radius: 400px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  @media (max-width: 667px) {
+    height: 300px;
+    width: 300px;
+  }
 `
 
 const Name = styled.span`
   margin-top: 30px;
   font-family: Roboto, Helvetica, sans-serif;
   font-weight: 600;
+  line-height: 40px;
   font-size: 2em;
   margin-bottom: 30px;
+  @media (max-width: 667px) {
+    font-size: 25px;
+    text-align: center;
+  }
 `
 
 const TrainerBio = styled.span`
   margin-top: 30px;
   font-family: Roboto, Helvetica, sans-serif;
   font-weight: 300;
-  font-size: 1.2em;
   line-height: 40px;
+  font-size: 1.2em;
   text-align: center;
   span {
     color: #53924f;
     font-weight: 900;
+  }
+  @media (max-width: 667px) {
+    font-size: 18px;
   }
 `
 
@@ -47,6 +62,9 @@ const Underline = styled.div`
   opacity: 0.3;
   margin-bottom: 10px;
   border-radius: 10px;
+  @media (max-width: 667px) {
+    width: 250px;
+  }
 `
 
 const ProfileContainer = styled.div`
@@ -62,7 +80,7 @@ const TrainerSection = () => {
       <TrainerContainer>
         <ProfileContainer>
           <Image>
-            <img src={guy} alt="guy image" />
+            <img src={guy} alt="guy" />
           </Image>
           <Name>Marlon Leon—Master Dog Trainer</Name>
           <Underline></Underline>

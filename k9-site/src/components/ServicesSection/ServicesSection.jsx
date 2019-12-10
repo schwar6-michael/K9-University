@@ -3,7 +3,6 @@ import styled from "styled-components"
 import training from "../../images/training.png"
 import boarding from "../../images/boarding.png"
 import grooming from "../../images/grooming.png"
-import serviceBlob from "../../images/service-blob.png"
 
 const ServicesContainer = styled.div`
   position: relative;
@@ -31,6 +30,9 @@ const Services = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 0 15%;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `
 
 const Service = styled.div`
@@ -58,6 +60,9 @@ const Service = styled.div`
       color: #ffffff;
     }
   }
+  @media (max-width: 900px) {
+    margin-bottom: 50px;
+  }
 `
 
 const Underline = styled.div`
@@ -67,6 +72,9 @@ const Underline = styled.div`
   opacity: 0.15;
   margin-bottom: 100px;
   border-radius: 10px;
+  @media (max-width: 667px) {
+    width: 250px;
+  }
 `
 
 const ImageWrapper = styled.div`

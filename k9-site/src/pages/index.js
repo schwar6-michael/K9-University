@@ -1,5 +1,4 @@
 import React from "react"
-import WelcomeSection from "../components/WelcomeSection/WelcomeSection"
 import TopSection from "../components/TopSection/TopSection"
 import TestimonySection from "../components/TestimonySection/TestimonySection"
 import ServicesSection from "../components/ServicesSection/ServicesSection"
@@ -13,7 +12,7 @@ const IndexPage = () => {
       <TrainerSection />
       <ServicesSection />
       <TestimonySection />
-      <ContactSection />
+      {/* <ContactSection /> */}
     </>
   )
 }

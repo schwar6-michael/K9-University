@@ -9,17 +9,13 @@ import Fade from "react-reveal/Fade"
 const TestimonyContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  .awssld__container {
-    height: 250px;
-  }
+  padding: 30% 0;
   .awssld__content {
-    height: 250px;
     position: relative;
     background: #ffffff;
     font-family: Roboto, Helvetica, sans-serif;
@@ -43,12 +39,7 @@ const TestimonyContainer = styled.div`
     opacity: 0.125;
   }
 `
-const ImageContainer = styled.div`
-  width: 50%;
-  img {
-    width: 100%;
-  }
-`
+
 const SectionTitle = styled.span`
   font-family: Roboto, Helvetica, sans-serif;
   font-weight: 600;
@@ -56,7 +47,7 @@ const SectionTitle = styled.span`
   text-align: center;
   margin-bottom: 30px;
   font-size: 2em;
-  margin-top: 100px;
+  line-height: 50px;
 `
 
 const Quote = styled.span`
@@ -75,18 +66,15 @@ const Quote = styled.span`
 const Underline = styled.div`
   width: 400px;
   height: 2px;
-  background: orange;
-  opacity: 0.7;
-  margin-bottom: 10px;
+  background: #808080;
+  opacity: 0.3;
+  margin-bottom: 50px;
   border-radius: 10px;
+  @media (max-width: 667px) {
+    width: 250px;
+  }
 `
 
-const ContentContainer = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
 const AutoplaySlider = withAutoplay(AwesomeSlider)
 
 const TestimonySection = () => {
