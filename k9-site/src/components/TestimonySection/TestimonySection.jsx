@@ -14,7 +14,10 @@ const TestimonyContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  padding: 30% 0;
+  padding: 100px 0;
+  .awssld__wrapper {
+    height: 250px;
+  }
   .awssld__content {
     position: relative;
     background: #ffffff;
@@ -48,6 +51,7 @@ const SectionTitle = styled.span`
   margin-bottom: 30px;
   font-size: 2em;
   line-height: 50px;
+  width: 400px;
 `
 
 const Quote = styled.span`
@@ -98,9 +102,9 @@ const TestimonySection = () => {
           </Quote>
           <Quote>
             <img className="quotes" src={quotes} alt="quotes" />
-            "Ruby had such a good time at K-9 university. She had so much
-            trouble walking on a leash before she came, but now she walks by our
-            side the whole time!"
+            "Marlon is a miracle worker. Ruby had so much trouble walking on a
+            leash before the training, and now she walks perfectly by my side
+            without a leash"
           </Quote>
           <Quote>
             <img className="quotes" src={quotes} alt="quotes" />

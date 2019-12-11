@@ -11,6 +11,7 @@ const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
   .pup1 {
     position: absolute;
@@ -57,41 +58,6 @@ const TopContainer = styled.div`
       height: 400px;
       transform: translateY(-50%);
       z-index: -1;
-    }
-  }
-`
-
-const NavBar = styled.ul`
-  font-family: Roboto, Helvetica, sans-serif;
-  color: #23395d;
-  font-weight: 600;
-  width: 100%;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  cursor: pointer;
-  height: 60px;
-  margin-bottom: 30vh;
-  margin-left: 70px;
-  li {
-    margin: 0;
-    margin-right: 25px;
-    padding: 0 2px;
-  }
-  li:hover {
-    border-bottom: 4px solid #23395d;
-    transition: 200ms all ease-out;
-  }
-  @media (max-width: 667px) {
-    justify-content: center;
-    padding: 0 10px;
-    margin-left: 0;
-    margin-bottom: 25vh;
-    li {
-      margin: 0;
-      margin-right: 10px;
-      padding: 0 2px;
     }
   }
 `
@@ -162,11 +128,6 @@ const MainButton = styled.button`
 const TopSection = () => {
   return (
     <TopContainer>
-      <NavBar>
-        <li>Meet Marlon</li>
-        <li>Services</li>
-        <li>Contact Us</li>
-      </NavBar>
       <img className="background" src={background} alt="background" />
       <img className="pup1" src={pup1} alt="puppy" />
       <LogoContainer>

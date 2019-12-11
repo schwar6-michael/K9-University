@@ -1,25 +1,27 @@
 import React from "react"
 import styled from "styled-components"
-import guy from "../../images/guy-image.jpg"
+import marlon from "../../images/marlon.jpg"
 import Fade from "react-reveal/Fade"
 
 const TrainerContainer = styled.div`
   position: relative;
-  padding-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 667px) {
-    padding: 0 30px;
-  }
+  padding: 100px 0;
 `
 
 const Image = styled.div`
+  display: flex;
+  align-items: center;
   height: 400px;
   width: 400px;
   border-radius: 400px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  img {
+    border-radius: 400px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  }
   @media (max-width: 667px) {
     height: 300px;
     width: 300px;
@@ -29,12 +31,12 @@ const Image = styled.div`
 const Name = styled.span`
   margin-top: 30px;
   font-family: Roboto, Helvetica, sans-serif;
+  color: #53924f;
   font-weight: 600;
   line-height: 40px;
   font-size: 2em;
   margin-bottom: 30px;
   @media (max-width: 667px) {
-    font-size: 25px;
     text-align: center;
   }
 `
@@ -80,7 +82,7 @@ const TrainerSection = () => {
       <TrainerContainer>
         <ProfileContainer>
           <Image>
-            <img src={guy} alt="guy" />
+            <img src={marlon} alt="marlon trainer" />
           </Image>
           <Name>Marlon Leon—Master Dog Trainer</Name>
           <Underline></Underline>

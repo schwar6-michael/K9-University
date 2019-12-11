@@ -12,7 +12,6 @@ const ServicesContainer = styled.div`
   align-items: center;
   padding: 90px 0;
   background: rgb(10, 255, 93, 0.12);
-  margin-top: 50px;
 `
 
 const SectionTitle = styled.span`

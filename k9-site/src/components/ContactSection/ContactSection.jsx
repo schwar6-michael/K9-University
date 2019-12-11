@@ -25,6 +25,12 @@ const ContactContainer = styled.div`
     z-index: -3;
     opacity: 0.65;
     height: 500px;
+    min-width: 1150px;
+  }
+  @media (max-width: 950px) {
+    .cuteDog {
+      display: none;
+    }
   }
 `
 const HorizontalContainer = styled.div`
@@ -54,6 +60,9 @@ const TextArea = styled.textarea`
 `
 const Form = styled.form`
   width: 450px;
+  @media (max-width: 667px) {
+    width: 300px;
+  }
 `
 
 const SectionTitle = styled.span`
@@ -96,7 +105,7 @@ const BottomNav = styled.div`
 const ContactSection = () => {
   return (
     <ContactContainer>
-      <SectionTitle>Still Not Sure? Let's Chat...</SectionTitle>
+      <SectionTitle>Still Not Sure? Let's Chat.</SectionTitle>
       <img className="cuteDog" src={cuteDog} alt="cute dog" />
       <img
         className="inverseBackground"
@@ -110,7 +119,7 @@ const ContactSection = () => {
         </HorizontalContainer>
         <Input placeholder="Email" name="setEmail" />
         <TextArea placeholder="Message" name="setMessage" />
-        <SubmitButton>Submit</SubmitButton>
+        <SubmitButton>Contact Me</SubmitButton>
       </Form>
       <BottomNav></BottomNav>
     </ContactContainer>
